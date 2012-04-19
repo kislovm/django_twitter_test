@@ -1,0 +1,13 @@
+div.wrapper {
+    margin-top: 50px;
+}
+
+div#result {
+    margin-top: 50px;
+}
+
+div.twit {
+    margin-top: 10px;
+    margin-left: 35px;
+    text-align: left;
+}

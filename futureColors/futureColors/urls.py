@@ -5,6 +5,8 @@ from django.conf.urls import patterns, include, url
 # admin.autodiscover()
 
 urlpatterns = patterns('',
+    url(r'^$', 'futureColors.twitter.views.index'),
+    url(r'^getStatuses/$', 'futureColors.twitter.views.getStatuses'),
     # Examples:
     # url(r'^$', 'futureColors.views.home', name='home'),
     # url(r'^futureColors/', include('futureColors.foo.urls')),

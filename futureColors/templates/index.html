@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" type="text/css" href="/static/style.css" />
+        <script type="text/javascript" src="/static/jquery-1.7.1.min.js"></script>
+        <script type="text/javascript" src="/static/jquery.form.js"></script>
+        <script>
+            $(function() {
+                $('#form').ajaxForm({
+                    success : function() {
+                        SV.getQuestion(uid, name);
+                    },
+                    target : '#result'
+                });
+            });
+
+        </script>
+    </head>
+    <body>
+        <center>
+            <div class = "wrapper">
+                <form id="form" action="/getStatuses" method="GET">
+                    <label> Введите ник: </label>
+                    <input type="text" name="screen_name" />
+                </form>
+                <div id="result"></div>
+        </center>
+    </body>
+</html>

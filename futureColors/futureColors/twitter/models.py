@@ -1,5 +1,10 @@
+# coding: utf-8
+
 import tweepy
 from tweepy import Cursor
+
+
+
 class timeline():
     
     timeline = []
@@ -13,7 +18,6 @@ class timeline():
             self.timeline.append(status)
     
     def getMentions(self, status):
-        print status.text
         mentions = []
         results = self.api.related_results(status.id)
         if len(results) > 0:
