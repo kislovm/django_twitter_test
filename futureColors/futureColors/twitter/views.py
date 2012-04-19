@@ -11,12 +11,6 @@ def index(request):
     
 def getStatuses(request):
     if 'screen_name' in request.GET:
-        
-        t = [
-             [
-              {'text' : 'hi!'}, [[{'text' : 'reply1'}], [{'text' : 'reply2'}] ]
-              ],
-             ]
         t = timeline(request.GET['screen_name'])
         return render_to_response('statuses.html', {'t' : t.timeline}, context_instance=RequestContext(request))
     return redirect('http://futurecolors.ru')

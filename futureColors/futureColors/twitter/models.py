@@ -15,7 +15,7 @@ class timeline():
         self.api = tweepy.API(auth)
         for status in Cursor(self.api.user_timeline, screen_name=screen_name).items():
             status = self.getMentions(status) 
-            self.timeline.append(status)
+            self.timeline.append( status )
     
     def getMentions(self, status):
         mentions = []
@@ -25,6 +25,6 @@ class timeline():
             for result in results:
                 tmp = result.value
                 if tmp.in_reply_to_status_id == status.id:
-                    self.getMentions(tmp)
+                    tmp = self.getMentions(tmp)
                     mentions.append(tmp)
-        return [status, [mentions, ], ]
+        return( [status, mentions, ] )
